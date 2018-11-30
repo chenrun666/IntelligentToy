@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/mui.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="title_text">XXX 正在播放</h1>
+		</header>
+
+		<div class="mui-content">
+			<div class="mui-row" style="text-align: center; margin-top: 10px;">
+				<img src="" alt="" id="cover" style="border-radius: 100%; width: 250px;height: 250px;" />
+			</div>
+		</div>
+
+		<button type="button" class="mui-btn mui-btn-warning mui-btn-block" id="pause">暂停</button>
+		<button type="button" class="mui-btn mui-btn-red mui-btn-block" id="stop">停止</button>
+		<button type="button" class="mui-btn mui-btn-blue mui-btn-block" id="resume">继续</button>
+		<button type="button" class="mui-btn mui-btn-green mui-btn-block">发送给玩具</button>
+
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			var Sdata = null;
+			var player = null;
+			mui.plusReady(function() {
+				Sdata = plus.webview.currentWebview();
+				player = plus.audio.createPlayer(window.serv_audio + Sdata.audio);
+				player.play();
+				document.getElementById("title_text").innerText = Sdata.title + "正在播放"
+				document.getElementById("cover").src = window.serv_image + Sdata.cover
+				
+			})
+			
+			document.getElementById("pause").addEventListener("tap", function() {
+				player.pause()
+			})
+			document.getElementById('resume').addEventListener('tap',function () {
+			        player.resume()
+			})
+			document.getElementById('stop').addEventListener('tap',function () {
+			        player.stop()
+			})
+		</script>
+	</body>
+
+</html>
