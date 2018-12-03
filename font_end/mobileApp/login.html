@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/mui.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">用户登录</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>用户名</label>
+					<input type="text" class="mui-input-clear" placeholder="请输入用户名" id="username">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input type="password" class="mui-input-password" placeholder="请输入密码" id="password">
+				</div>
+				<div class="mui-button-row">
+					<button type="button" class="mui-btn mui-btn-primary" id="login">登陆</button>
+					<button type="button" class="mui-btn mui-btn-danger" id="reg">注册</button>
+				</div>
+			</form>
+		</div>
+
+	</body>
+	<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/md5.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		mui.init()
+		document.getElementById('reg').addEventListener('tap', function() {
+			mui.openWindow({
+				url: "reg.html",
+				id: "reg.html"
+			})
+		})
+		document.getElementById('login').addEventListener('tap',function () {
+		        var username = document.getElementById("username").value;
+		        var password = hex_md5(document.getElementById("password").value);
+		        
+		        mui.post(window.serv +"login",{
+		        		"username":username,
+		        		"password":password
+		        	},function(data){
+		        		console.log(JSON.stringify(data))
+		        		if (data.code == 0) {
+		        			mui.toast("登陆成功")
+		        		} else if (data.code == 1) {
+		        			mui.toast("用户名密码不能为空")
+		        		} else {
+		        			mui.toast("用户名密码错误")
+		        		}
+		        	},'json'
+		        );
+		})
+	</script>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<audio src="" autoplay controls id="player"></audio>
+</body>
+<script>
+    var ws = new WebSocket("ws://192.168.19.14:9572/toy/1234_toy");
+
+    ws.onmessage = function (data) {
+        console.log(data.data);
+        document.getElementById("player").src = "http://192.168.19.14:5000/get_audio/" + data.data
+    }
+
+</script>
+</html>

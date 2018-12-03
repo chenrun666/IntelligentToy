@@ -7,9 +7,10 @@
  * MUI核心JS
  * @type _L4.$|Function
  */
-window.serv = "http://192.168.43.26:5000/";
+window.serv = "http://192.168.19.14:5000/";
 window.serv_image = window.serv + "get_image/";
 window.serv_audio = window.serv + "get_audio/";
+window.serv_ws = "ws://192.168.19.14:9572/app"
 
 var mui = (function(document, undefined) {
 	var readyRE = /complete|loaded|interactive/;

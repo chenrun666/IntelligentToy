@@ -26,9 +26,9 @@
 		        <span class="mui-icon mui-icon-email"></span>
 		        <span class="mui-tab-label">邮件</span>
 		    </a>
-		    <a class="mui-tab-item">
-		        <span class="mui-icon mui-icon-gear"></span>
-		        <span class="mui-tab-label">设置</span>
+		    <a class="mui-tab-item" id="mine">
+		        <span class="mui-icon mui-icon-person"></span>
+		        <span class="mui-tab-label">我的</span>
 		    </a>
 		</nav>
 	</body>
@@ -43,6 +43,27 @@
 					bottom: "50px"
 				}
 			}]
+		})
+		
+		var ws = new WebSocket(window.serv_ws+"/43121_app")
+		ws.onopen=function() {
+			console.log(JSON.stringify(ws))
+		}
+		
+		document.addEventListener("sendMusic", function(data) {
+			console.log(data.detail);
+			var send_msg = data.detail;
+			
+			send_msg.to_user = "1234_toy";
+			console.log(send_msg)
+			ws.send(JSON.stringify(send_msg))
+		})
+		
+		document.getElementById('mine').addEventListener('tap',function () {
+		       mui.openWindow({
+		       		url: "login.html",
+		       		id: "login.html"
+		       })
 		})
 	</script>
 

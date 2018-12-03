@@ -23,7 +23,7 @@
 		<button type="button" class="mui-btn mui-btn-warning mui-btn-block" id="pause">暂停</button>
 		<button type="button" class="mui-btn mui-btn-red mui-btn-block" id="stop">停止</button>
 		<button type="button" class="mui-btn mui-btn-blue mui-btn-block" id="resume">继续</button>
-		<button type="button" class="mui-btn mui-btn-green mui-btn-block">发送给玩具</button>
+		<button type="button" class="mui-btn mui-btn-green mui-btn-block" id="sendMusic">发送给玩具</button>
 
 		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
@@ -47,6 +47,10 @@
 			})
 			document.getElementById('stop').addEventListener('tap',function () {
 			        player.stop()
+			})
+			document.getElementById("sendMusic").addEventListener("tap", function() {
+				var index = plus.webview.getWebviewById("HBuilder")
+				mui.fire(index, "sendMusic", {music: Sdata.audio})
 			})
 		</script>
 	</body>

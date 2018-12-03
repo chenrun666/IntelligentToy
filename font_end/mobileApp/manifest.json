@@ -132,13 +132,22 @@
 				"resources": [
 					"main.html"
 				],
-				"refer": [],
+				"refer": [
+					"login.html"
+				],
 				"priority": 0
 			},
 			"main.html": {
 				"resources": [],
 				"refer": [
 					"player.html"
+				],
+				"priority": 0
+			},
+			"login.html": {
+				"resources": [],
+				"refer": [
+					"reg.html"
 				],
 				"priority": 0
 			}

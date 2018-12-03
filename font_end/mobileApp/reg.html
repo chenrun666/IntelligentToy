@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/mui.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">注册</h1>
+		</header>
+
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>用户名</label>
+					<input type="text" class="mui-input-clear" placeholder="请输入用户名" id="username">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input type="password" class="mui-input-password" placeholder="请输入密码" id="password">
+				</div>
+				<div class="mui-input-row">
+					<label>确认密码</label>
+					<input type="password" class="mui-input-password" placeholder="请再次输入密码" id="againpwd">
+				</div>
+				<div class="mui-input-row">
+					<label>nickname</label>
+					<input type="text" class="mui-input-clear" placeholder="请输入昵称" id="nickname">
+				</div>
+				<div class="mui-input-row mui-radio" id="gender">
+					<label>我是爸爸</label>
+					<input name="gender" type="radio" value="0">
+				</div>
+				<div class="mui-input-row mui-radio ">
+					<label>我是妈妈</label>
+					<input name="gender" type="radio" checked value="1">
+				</div>
+				<div class="mui-button-row">
+					<button type="button" class="mui-btn mui-btn-primary" id="submit">提交</button>
+					<button type="button" class="mui-btn mui-btn-danger mui-action-back">取消</button>
+				</div>
+			</form>
+		</div>
+
+	</body>
+	<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/md5.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		mui.init()
+		document.getElementById('submit').addEventListener('tap', function() {
+
+			var username = document.getElementById("username").value;
+			var password = hex_md5(document.getElementById("password").value);
+			var againpwd = hex_md5(document.getElementById("againpwd").value);
+			if(password != againpwd) {
+				mui.toast("两次密码不一致！！！")
+				return
+			}
+			var nickname = document.getElementById("nickname").value;
+			var gender_list = document.getElementsByName("gender")
+			var gender = null
+			for(var i = 0; i < gender_list.length; i++) {
+				if(gender_list[i].checked) {
+					gender = gender_list[i].value;
+
+				}
+			}
+			var send_msg = {
+				"username": username,
+				"password": password,
+				"nickname": nickname,
+				"gender": gender
+			}
+			console.log(JSON.stringify(send_msg))
+			mui.post(window.serv + "reg", send_msg,
+				function(data) {
+					console.log(JSON.stringify(data))
+					if (data.code == 0) {
+						mui.toast("注册成功")
+						mui.back()
+					} else if (data.code == 1) {
+						mui.toast("用户名已存在")
+					} else{
+						mui.toast("注册失败")
+					}
+				}, 'json'
+			);
+		})
+	</script>
+
+</html>

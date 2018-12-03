@@ -4,12 +4,18 @@
 			"main.html"
 		],
 		"refer": [
-			"main.html"
+			"main.html",
+			"login.html"
 		]
 	},
 	"main.html": {
 		"refer": [
 			"player.html"
+		]
+	},
+	"login.html": {
+		"refer": [
+			"reg.html"
 		]
 	}
 }
