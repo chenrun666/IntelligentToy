@@ -133,7 +133,8 @@
 					"main.html"
 				],
 				"refer": [
-					"login.html"
+					"login.html",
+					"userinfo.html"
 				],
 				"priority": 0
 			},
@@ -147,7 +148,30 @@
 			"login.html": {
 				"resources": [],
 				"refer": [
-					"reg.html"
+					"reg.html",
+					"userinfo.html"
+				],
+				"priority": 0
+			},
+			"userinfo.html": {
+				"resources": [],
+				"refer": [
+					"toymanagy.html",
+					"login.html"
+				],
+				"priority": 0
+			},
+			"toymanagy.html": {
+				"resources": [],
+				"refer": [
+					"scan.html"
+				],
+				"priority": 0
+			},
+			"scan.html": {
+				"resources": [],
+				"refer": [
+					"bindtoy.html"
 				],
 				"priority": 0
 			}

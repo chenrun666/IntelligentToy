@@ -5,7 +5,8 @@
 		],
 		"refer": [
 			"main.html",
-			"login.html"
+			"login.html",
+			"userinfo.html"
 		]
 	},
 	"main.html": {
@@ -15,7 +16,24 @@
 	},
 	"login.html": {
 		"refer": [
-			"reg.html"
+			"reg.html",
+			"userinfo.html"
+		]
+	},
+	"userinfo.html": {
+		"refer": [
+			"toymanagy.html",
+			"login.html"
+		]
+	},
+	"toymanagy.html": {
+		"refer": [
+			"scan.html"
+		]
+	},
+	"scan.html": {
+		"refer": [
+			"bindtoy.html"
 		]
 	}
 }

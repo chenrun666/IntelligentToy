@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/mui.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">绑定玩具</h1>
+		</header>
+		<div class="mui-content">
+		    <form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>玩具的名称</label>
+					<input type="text" class="mui-input-clear" placeholder="请输入玩具的名称" id="toyname">
+				</div>
+				
+				<div class="mui-input-row">
+					<label>主人的名字</label>
+					<input type="text" class="mui-input-clear" placeholder="主人的名字" id="name">
+				</div>
+				<div class="mui-input-row">
+					<label>对您的称呼</label>
+					<input type="text" class="mui-input-clear" placeholder="请输入对您的称呼" id="talkname">
+				</div>
+				<div class="mui-input-row mui-radio" id="gender">
+					<label>男宝宝</label>
+					<input name="gender" type="radio" value="0">
+				</div>
+				<div class="mui-input-row mui-radio ">
+					<label>女宝宝</label>
+					<input name="gender" type="radio" checked value="1">
+				</div>
+				<div class="mui-button-row">
+					<button type="button" class="mui-btn mui-btn-primary" id="submit">提交</button>
+					<button type="button" class="mui-btn mui-btn-danger mui-action-back">取消</button>
+				</div>
+			</form>
+		</div>
+		
+
+	</body>
+	<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init()
+		var Sdata = null
+		mui.plusReady(function() {
+			Sdata = plus.webview.currentWebview()
+			 
+		})
+		var gender = null 
+		var gender_list = document.getElementsByName("gender")
+		for (var i = 0; i < gender_list.length; i++) {
+			if (gender_list[i].checked) {
+				gender = gender_list[i].value;
+			}
+		}
+		document.getElementById('submit').addEventListener('tap',function () {
+		        mui.post(window.serv + "bindtoy/",{
+		        		"toyname": document.getElementById("toyname").value,
+		        		"name": document.getElementById("name").value,
+		        		"talkname": document.getElementById("talkname").value,
+		        		"gender": gender,
+		        		"device_key": Sdata.device_key,
+		        		"user_id": window.localStorage.getItem("user_id")
+		        	},function(data){
+		        		console.log(JSON.stringify(data))
+		        	},'json'
+		        );
+		})
+	</script>
+
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.css"/>
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <h1 class="mui-title">扫描玩具二维码</h1>
+    </header>
+    
+    <div class="mui-content">
+        <div id="scan_div" style="width: 100%; height: 650px;"> 
+        		
+        	
+        </div>
+    </div>
+
+</body>
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    mui.init()
+    var scan = null;
+    mui.plusReady(function() {
+    		scan = new plus.barcode.Barcode("scan_div")
+    		scan.onmarked = onmarked;
+    		scan.start()
+    })
+    function onmarked(type, code) {
+    		mui.post(window.serv + "valid/",{
+    				"code": code
+    			},function(data){
+    				if (data.code == 0) {
+    					mui.toast(data.msg)
+    					mui.openWindow({
+    						url: "bindtoy.html",
+    						id:"bindtoy.html",
+    						extras: {"device_key": data.data.device}
+    					})
+    					return
+    				} else if (code == 1) {
+    					// 玩具已经被绑定
+    					mui.toast(data.msg)
+    					mui.back()
+    					return 
+    				} else{
+    					mui.toast(data.msg)
+    					mui.back()
+    					return 
+    				}
+    				console.log(JSON.stringify(data.msg))
+    			},'json'
+    		);
+    	
+    }
+    </script>
+</html>

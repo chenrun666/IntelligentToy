@@ -1,3 +1,4 @@
+from bson import ObjectId
 from flask import jsonify
 from flask import Blueprint
 from flask import request
@@ -65,5 +66,22 @@ def login():
         RET["code"] = 2
         RET["msg"] = "用户名密码错误"
         RET["data"] = []
+
+    return jsonify(RET)
+
+
+@user.route("/auto_login", methods=["POST"])
+def auto_login():
+    user_id = request.form.get("user_id")
+    user_obj = USER.userinfo.find_one({"_id": ObjectId(user_id)})
+    if user_obj:
+        user_obj["_id"] = str(user_obj["_id"])
+        RET["code"] = 0
+        RET["msg"] = "已经登陆"
+        RET["data"] = user_obj
+    else:
+        RET["code"] = 1
+        RET["msg"] = "没有登陆，请先登录"
+        RET["data"] = {}
 
     return jsonify(RET)

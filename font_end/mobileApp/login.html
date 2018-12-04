@@ -50,7 +50,13 @@
 		        	},function(data){
 		        		console.log(JSON.stringify(data))
 		        		if (data.code == 0) {
-		        			mui.toast("登陆成功")
+		        			mui.toast("登陆成功");
+		        			window.localStorage.setItem("user_id", data.data._id);
+		        			mui.openWindow({
+		        				url: "userinfo.html",
+		        				id:"userinfo.html",
+		        				extras: data.data
+		        			})
 		        		} else if (data.code == 1) {
 		        			mui.toast("用户名密码不能为空")
 		        		} else {

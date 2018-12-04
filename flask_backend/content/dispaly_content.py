@@ -1,5 +1,9 @@
-from flask import Blueprint, jsonify
+import os
+
+from flask import Blueprint, jsonify, send_file
+
 from settings import COLLECTION
+from settings import AVATAR_PATH
 
 content = Blueprint("content", __name__)
 
@@ -10,3 +14,13 @@ def content_list():
     for index, item in enumerate(content_list):
         content_list[index]["_id"] = str(content_list[index]["_id"])
     return jsonify(content_list)
+
+
+@content.route("/avatar/<gender>")
+def get_avatar(gender):
+    avatar_path = os.path.join(AVATAR_PATH, gender)
+    print(avatar_path)
+    return send_file(avatar_path)
+
+
+

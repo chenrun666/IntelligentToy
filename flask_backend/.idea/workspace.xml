@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df31d137-1650-4bc6-8fd4-d058e6e03a51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../font_end/mobileApp/js/md5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../font_end/mobileApp/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../font_end/mobileApp/reg.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/flask_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flask_backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/dispaly_content.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/dispaly_content.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../font_end/mobileApp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../font_end/mobileApp/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../font_end/mobileApp/js/mui.js" beforeDir="false" afterPath="$PROJECT_DIR$/../font_end/mobileApp/js/mui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../font_end/mobileApp/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../font_end/mobileApp/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../font_end/mobileApp/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../font_end/mobileApp/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../font_end/mobileApp/player.html" beforeDir="false" afterPath="$PROJECT_DIR$/../font_end/mobileApp/player.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../font_end/mobileApp/unpackage/.confirmed_dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/../font_end/mobileApp/unpackage/.confirmed_dependencies" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,9 +20,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/flask_backend$app.coverage" NAME="app Coverage Results" MODIFIED="1543846017255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/flask_backend$socket_serv.coverage" NAME="socket_serv Coverage Results" MODIFIED="1543839641400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/socket_serv" />
-    <SUITE FILE_PATH="coverage/flask_backend$getData.coverage" NAME="getData Coverage Results" MODIFIED="1543836957361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/flask_backend$app.coverage" NAME="app Coverage Results" MODIFIED="1543931152636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask_backend$make_qr.coverage" NAME="make_qr Coverage Results" MODIFIED="1543917515348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/QRCode" />
+    <SUITE FILE_PATH="coverage/flask_backend$socket_serv.coverage" NAME="socket_serv Coverage Results" MODIFIED="1543904072677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/socket_serv" />
+    <SUITE FILE_PATH="coverage/flask_backend$getData.coverage" NAME="getData Coverage Results" MODIFIED="1543904590607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1932204745">
@@ -38,29 +37,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="1" />
+          <entry key="html" value="2" />
           <entry key="jpeg" value="1" />
-          <entry key="jpg" value="6" />
-          <entry key="py" value="18" />
+          <entry key="jpg" value="14" />
+          <entry key="py" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="1" />
-          <entry key="Image" value="7" />
-          <entry key="Python" value="18" />
+          <entry key="HTML" value="2" />
+          <entry key="Image" value="15" />
+          <entry key="Python" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="322" />
-          <entry key="py" value="4986" />
+          <entry key="py" value="8208" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="322" />
-          <entry key="Python" value="4986" />
+          <entry key="Python" value="8208" />
         </counts>
       </usages-collector>
     </session>
@@ -70,26 +69,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="270">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
-                <marker date="1543844912054" expanded="true" signature="333:375" ph="..." />
+                <marker date="1543923611592" expanded="true" signature="395:437" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/content/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+            <state relative-caret-position="301">
+              <caret line="86" column="23" lean-forward="true" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-                <element signature="e#505#609#0" />
-                <marker date="1543846017246" expanded="false" signature="223:228" ph="..." />
-                <marker date="1543846017246" expanded="true" signature="1024:1611" ph="..." />
+                <marker date="1543931146713" expanded="false" signature="249:254" ph="..." />
+                <marker date="1543931146713" expanded="true" signature="1050:1744" ph="..." />
+                <marker date="1543931146713" expanded="true" signature="1701:1744" ph="..." />
               </folding>
             </state>
           </provider>
@@ -98,8 +97,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="105">
+              <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/content/valid.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="68" column="46" lean-forward="true" selection-start-line="68" selection-start-column="46" selection-end-line="68" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+                <marker date="1543929643755" expanded="true" signature="769:2297" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,10 +119,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/content/dispaly_content.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="210">
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
+                <marker date="1543903441310" expanded="true" signature="574:612" ph="..." />
               </folding>
             </state>
           </provider>
@@ -134,11 +147,13 @@
       <list>
         <option value="$PROJECT_DIR$/utils/getData.py" />
         <option value="$PROJECT_DIR$/content/get_audio_image.py" />
-        <option value="$PROJECT_DIR$/content/dispaly_content.py" />
         <option value="$PROJECT_DIR$/templates/toy.html" />
         <option value="$PROJECT_DIR$/socket_serv/socket_serv.py" />
-        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/content/dispaly_content.py" />
+        <option value="$PROJECT_DIR$/QRCode/make_qr.py" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/content/valid.py" />
         <option value="$PROJECT_DIR$/content/user.py" />
       </list>
     </option>
@@ -150,10 +165,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="75" />
-    <option name="y" value="124" />
-    <option name="width" value="1099" />
-    <option name="height" value="807" />
+    <option name="x" value="232" />
+    <option name="y" value="55" />
+    <option name="width" value="1278" />
+    <option name="height" value="806" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -172,7 +187,18 @@
             <path>
               <item name="flask_backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="flask_backend" type="462c0819:PsiDirectoryNode" />
-              <item name="avatar" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flask_backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flask_backend" type="462c0819:PsiDirectoryNode" />
+              <item name="QRCode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flask_backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flask_backend" type="462c0819:PsiDirectoryNode" />
+              <item name="QRCode" type="462c0819:PsiDirectoryNode" />
+              <item name="QR_images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flask_backend" type="b2602c69:ProjectViewProjectNode" />
@@ -210,7 +236,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager" selected="Python.make_qr">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="flask_backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -255,6 +281,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="make_qr" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="flask_backend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/QRCode" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/QRCode/make_qr.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="socket_serv" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="flask_backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -281,12 +329,14 @@
       <item itemvalue="Python.getData" />
       <item itemvalue="Python.app" />
       <item itemvalue="Python.socket_serv" />
+      <item itemvalue="Python.make_qr" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
-        <item itemvalue="Python.socket_serv" />
+        <item itemvalue="Python.make_qr" />
         <item itemvalue="Python.getData" />
+        <item itemvalue="Python.socket_serv" />
       </list>
     </recent_temporary>
   </component>
@@ -304,14 +354,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="453" y="85" width="1099" height="807" extended-state="0" />
+    <frame x="232" y="55" width="1278" height="806" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23178808" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989429" visible="true" weight="0.23220065" />
+      <window_info id="Structure" order="1" sideWeight="0.5010571" side_tool="true" weight="0.2535478" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32947975" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.316474" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34442836" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -325,7 +376,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32928804" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
@@ -353,36 +404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.local/share/virtualenvs/Flask_Python3.6.7/venv/lib/python3.6/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="1798" selection-start-line="1798" selection-end-line="1798" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/getData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1543570651264" expanded="false" signature="303:304" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socket_serv/socket_serv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1543839728637" expanded="true" signature="278:283" ph="..." />
-            <marker date="1543839728637" expanded="true" signature="713:718" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/content/get_audio_image.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -391,23 +412,6 @@
             <element signature="e#0#9#0" expanded="true" />
             <marker date="1543579278772" expanded="true" signature="220:225" ph="..." />
             <marker date="1543579278772" expanded="true" signature="375:380" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/toy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="67" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/content/dispaly_content.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -421,33 +425,118 @@
     <entry file="file://$PROJECT_DIR$/avatar/boy.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
+    <entry file="file://$PROJECT_DIR$/templates/toy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="150">
+          <caret line="10" column="64" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/861376ea-2609-4426-b568-b9ddb02227c4.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/92eca058-cfa5-469d-bde7-b547856b233f.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/Flask_Python3.6.7/venv/lib/python3.6/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="2313" selection-start-line="2313" selection-end-line="2313" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/getData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1543570651264" expanded="false" signature="303:304" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QRCode/QR_images/cd219cb4114cf33817da7b049785cc51.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QRCode/make_qr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1543917515334" expanded="true" signature="164:173" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/socket_serv/socket_serv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="23" column="46" lean-forward="true" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1543839728637" expanded="true" signature="278:283" ph="..." />
+            <marker date="1543839728637" expanded="true" signature="713:718" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QRCode/QR_images/c700652184ea3b4bf2a45654bbe1029f.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/dispaly_content.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1543903441310" expanded="true" signature="574:612" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
-            <marker date="1543844912054" expanded="true" signature="333:375" ph="..." />
+            <marker date="1543923611592" expanded="true" signature="395:437" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/content/user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+        <state relative-caret-position="301">
+          <caret line="86" column="23" lean-forward="true" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#505#609#0" />
-            <marker date="1543846017246" expanded="false" signature="223:228" ph="..." />
-            <marker date="1543846017246" expanded="true" signature="1024:1611" ph="..." />
+            <marker date="1543931146713" expanded="false" signature="249:254" ph="..." />
+            <marker date="1543931146713" expanded="true" signature="1050:1744" ph="..." />
+            <marker date="1543931146713" expanded="true" signature="1701:1744" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QRCode/QR_images/0b69cfa402053aafae7c535a58a2642f.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/valid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="68" column="46" lean-forward="true" selection-start-line="68" selection-start-column="46" selection-end-line="68" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <marker date="1543929643755" expanded="true" signature="769:2297" ph="..." />
           </folding>
         </state>
       </provider>

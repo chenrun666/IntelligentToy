@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/mui.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">用户详细信息</h1>
+		</header>
+
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" id="avatar" src="http://placehold.it/40x30">
+						<div class="mui-media-body">
+							<span id="nickname"></span>
+							<p class="mui-ellipsis" id="username"></p>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" id="toy_btn">
+						<i class="mui-icon mui-icon-qq"></i> 管理我的玩具
+					</a>
+				</li>
+			</ul>
+			<button type="button" class="mui-btn mui-btn-red mui-btn-block" id="out_btn" style="margin-top: 20px;">退出登陆</button>
+		</div>
+	</body>
+	<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init()
+		var Sdata = null;
+		mui.plusReady(function() {
+			Sdata = plus.webview.currentWebview()
+			console.log(JSON.stringify(Sdata))
+			document.getElementById("avatar").src = window.serv_avatar + Sdata.avatar;
+			document.getElementById("nickname").innerText = Sdata.nickname;
+			document.getElementById("username").innerText = Sdata.username;
+		})
+		document.getElementById("toy_btn").addEventListener("tap", function() {
+			mui.openWindow({
+				url: "toymanagy.html",
+				id: "toymanage.html"
+			})
+		})
+		
+		document.getElementById("out_btn").addEventListener("tap", function() {
+			window.localStorage.removeItem("user_id")
+			mui.openWindow({
+				url: "login.html",
+				id: "login.html"
+			})
+		})
+	</script>
+
+</html>
