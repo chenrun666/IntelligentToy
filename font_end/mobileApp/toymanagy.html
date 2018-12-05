@@ -15,7 +15,7 @@
 		</header>
 		
 		<div class="mui-content">
-		    <ul class="mui-table-view">
+		    <ul class="mui-table-view" id="content_box">
 		        <li class="mui-table-view-cell mui-media">
 		            <a href="javascript:;" id="add_toy_btn">
 		                <img class="mui-media-object mui-pull-left" src="image/add_image.jpg">
@@ -34,6 +34,17 @@
 	<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		mui.init()
+		mui.plusReady(function() {
+			mui.post(window.serv + 'my_toy',{
+					"user_id": window.localStorage.getItem("user_id")
+				},function(data){
+					console.log(JSON.stringify(data))
+					for (var i = 0; i < data.data.length; i++) {
+						create_content(data.data[i])
+					}	
+				},'json'
+			);
+		})
 		document.getElementById('add_toy_btn').addEventListener('tap',function () {
 		        mui.openWindow({
 		        		url:"scan.html",
@@ -41,6 +52,37 @@
 		        		
 		        })
 		})
+		
+		function create_content(content) {
+			var litag = document.createElement("li")
+			litag.className = "mui-table-view-cell mui-media"
+			var atag = document.createElement("a")
+			atag.onclick = function(){
+				open_toy_info(content)
+			}
+			var imgtag = document.createElement("img")
+			imgtag.className = "mui-media-object mui-pull-left"
+			imgtag.src = window.serv_avatar + content.avatar
+			var divtag = document.createElement("div")
+			divtag.innerText = content.name
+			var ptag = document.createElement("p")
+			ptag.className = "mui-ellipsis"
+			ptag.innerText = content.toyname
+			
+			litag.appendChild(atag)
+			atag.appendChild(imgtag)
+			atag.appendChild(divtag)
+			divtag.appendChild(ptag)
+			
+			document.getElementById("content_box").appendChild(litag)
+		}
+		function open_toy_info(toy_info) {
+			mui.openWindow({
+				url: "toy_info.html",
+				id:"toy_info.html",
+				extras: toy_info
+			})
+		}
 	</script>
 
 </html>

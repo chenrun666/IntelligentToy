@@ -11,7 +11,8 @@ window.serv = "http://192.168.19.24:5000/";
 //window.serv = "http://192.168.43.26:5000/";
 window.serv_image = window.serv + "get_image/";
 window.serv_audio = window.serv + "get_audio/";
-window.serv_avatar = window.serv + "avatar/"
+window.serv_avatar = window.serv + "avatar/";
+window.serv_qr = window.serv + "get_qr/";
 window.serv_ws = "ws://192.168.19.24:9572/app"
 
 var mui = (function(document, undefined) {

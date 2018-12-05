@@ -164,7 +164,8 @@
 			"toymanagy.html": {
 				"resources": [],
 				"refer": [
-					"scan.html"
+					"scan.html",
+					"toy_info.html"
 				],
 				"priority": 0
 			},
@@ -172,6 +173,20 @@
 				"resources": [],
 				"refer": [
 					"bindtoy.html"
+				],
+				"priority": 0
+			},
+			"bindtoy.html": {
+				"resources": [],
+				"refer": [
+					"toymanagy.html"
+				],
+				"priority": 0
+			},
+			"toy_info.html": {
+				"resources": [],
+				"refer": [
+					"scan.html"
 				],
 				"priority": 0
 			}

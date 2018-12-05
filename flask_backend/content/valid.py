@@ -16,7 +16,15 @@ def valid_code():
     valid_code = request.form.get("code")
     code_obj = DEVICES.devices.find_one({"device_key": valid_code})
     if code_obj:
-        print(code_obj)
+        # 验证device是否绑定
+        toy_obj = TOYS.toy.find_one({"device_key": valid_code})
+        if toy_obj:
+            RET["code"] = 1
+            RET["msg"] = "该玩具已经绑定"
+            RET["data"] = {}
+
+            return jsonify(RET)
+
         RET["code"] = 0
         RET["msg"] = "验证通过, 进入绑定流程～～～"
         RET["data"] = {"device": valid_code}
@@ -39,20 +47,20 @@ def bind_toy():
     user_id = request.form.get("user_id")
 
     chat_window = CHAT.chat.insert_one({"user_list": [], "chat_list": []})
-    userinfo = USER.userinfo.find_one({"_id": ObjectId(user_id)})
+    user_info = USER.userinfo.find_one({"_id": ObjectId(user_id)})
 
     create_toy = {
         "device_key": device_key,
         "toyname": toyname,
         "name": name,
         "avatar": "body.jpg" if gender == 1 else "girle.jpg",
-        "bind_user": str(userinfo.get("_id")),
+        "bind_user": str(user_info.get("_id")),
         "friend_list": [
             {
-                "friend_nickname": userinfo.get("nickname"),
+                "friend_nickname": user_info.get("nickname"),
                 "friend_remark": talkname,
-                "friend_id": str(userinfo.get("_id")),
-                "friend_avatar": userinfo.get("avatar"),
+                "friend_id": str(user_info.get("_id")),
+                "friend_avatar": user_info.get("avatar"),
                 "friedn_chat": str(chat_window.inserted_id),
             }
         ]
@@ -61,8 +69,8 @@ def bind_toy():
 
     toy = TOYS.toy.insert_one(create_toy)
 
-    userinfo["bind_toy"].append(str(toy.inserted_id))
-    userinfo["friend_list"].append(
+    user_info["bind_toy"].append(str(toy.inserted_id))
+    user_info["friend_list"].append(
         {
             "friend_nickname": create_toy.get("name"),
             "friend_remark": create_toy.get("toyname"),
@@ -72,9 +80,9 @@ def bind_toy():
         }
     )
 
-    USER.userinfo.update_one({"_id": ObjectId(user_id)}, {"$set": userinfo})
+    USER.userinfo.update_one({"_id": ObjectId(user_id)}, {"$set": user_info})
 
-    user_list = [str(userinfo.get("_id")), str(toy.get("_id"))]
+    user_list = [str(user_info.get("_id")), str(toy.inserted_id)]
     CHAT.chat.update_one({"_id": chat_window.inserted_id}, {"$set": {"user_list": user_list}})
 
     RET["code"] = 0

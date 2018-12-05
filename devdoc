@@ -7,4 +7,16 @@
 
 2018年12月3日
 	1，基于websocket，实现手机端发送音频给浏览器端，模拟远程玩具
-	2，
+	2，基于window.LocalStorage.getItem("user_id")/window.LocalStorage.setItem("user_id", "123")/window.LocalStorage.removeItem("user_id")
+	3, 基于qrcode第三方模块生成二维码
+	4，扫码：
+		<div id="容器ID"></div>
+		基于Plus.barcode.Barcode("容器ID")
+		onmarked 成功之后的回调函数
+	5，玩具绑定：
+		绑定玩具 + 玩具的第一个好友 + chat_window + 用户的玩具好友
+
+2018年12月4日
+	1， 玩具开机：
+
+

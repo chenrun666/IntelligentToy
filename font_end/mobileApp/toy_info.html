@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/mui.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title" id="title_text">玩具的详细信息</h1>
+		</header>
+		<div class="mui-content" style="text-align: center;margin-top: 10px;">
+		    <img src="image/add_image.jpg" alt="" style="width: 180px; height: 180px; border-radius: 100%;" id="avatar"/>
+		</div>
+		<ul class="mui-table-view">
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right">
+		                <span>玩具名称:</span>
+		                <span id="toy_name"></span>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right">
+		               <span>宝宝名称:</span>
+		                <span id="baby_name"></span>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right">
+		                 <span>设备编号:</span>
+		                <span id="device_key"></span>
+		            </a>
+		        </li>
+		    </ul>
+		    <div class="mui-row" style="text-align: center;">
+		        <img src="image/add_image.jpg" alt="" style="width: 100px; height: 100px" id="qr"/>
+		    </div>
+		    <div class="mui-row" style="text-align: center;">
+		        通讯录
+		    </div>
+		    <ul class="mui-table-view mui-grid-view" id="contact">
+		        <li class="mui-table-view-cell mui-media mui-col-xs-3">
+		            <a href="#" id="add_friend">
+		                <img class="mui-media-object" src="image/add_image.jpg" style="width:50px; height: 50px; border-radius: 100%;">
+		                <div class="mui-media-body">添加朋友</div>
+		            </a>
+		        </li>
+		    </ul>
+	</body>
+	<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init()
+		var Sdata = null
+		mui.plusReady(function() {
+			Sdata = plus.webview.currentWebview();
+			console.log(JSON.stringify(Sdata))
+			document.getElementById("avatar").src = window.serv_avatar + Sdata.avatar;
+			document.getElementById("toy_name").innerText = Sdata.toyname;
+			document.getElementById("baby_name").innerText = Sdata.name;
+			document.getElementById("device_key").innerText = Sdata.device_key
+			document.getElementById("qr").src = window.serv_qr + Sdata.device_key
+			
+			console.log(JSON.stringify(Sdata.friend_list))
+			create_tag(Sdata.friend_list)
+			
+		})
+		
+		document.getElementById('add_friend').addEventListener('tap',function () {
+		        mui.openWindow({
+		        		url: "scan.html",
+		        		id: "scan.html",
+		        		extras:{tag: "toy"}
+		        })
+		})
+		document.getElementById('contact').addEventListener('tap',function () {
+		         mui.post(window.serv + "get_friend",{
+		         		
+		         	},function(data){
+		         		
+		         	},'json'
+		         );
+		        
+		})
+		
+		function create_tag (data) {
+		        var litag = document.createElement("li")
+		        litag.className = "mui-table-view-cell mui-media mui-col-xs-3"
+		        var atag = document.createElement("a")
+		        var imgtag = document.createElement("img")
+		        imgtag.className = "mui-media-object"
+		        imgtag.style.cssText = "width:50px; height: 50px; border-radius: 100%;"
+		        imgtag.src = window.serv_avatar + data[0].friend_avatar 
+		        var divtag = document.createElement("div")
+		        divtag.className = "mui-media-body"
+		        divtag.innerText = data[0].friend_remark  
+		        
+		        litag.appendChild(atag)
+		        atag.appendChild(imgtag)
+		        atag.appendChild(divtag)
+		        document.getElementById("contact").appendChild(litag)
+		}
+	</script>
+
+</html>

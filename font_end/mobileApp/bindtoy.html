@@ -69,7 +69,16 @@
 		        		"device_key": Sdata.device_key,
 		        		"user_id": window.localStorage.getItem("user_id")
 		        	},function(data){
-		        		console.log(JSON.stringify(data))
+		        		if (data.code == 0) {
+		        			mui.toast(data.msg)
+		        			mui.openWindow({
+		        				url: "toymanagy.html",
+		        				id: "toymanagy.html",
+		        				createNew: true,
+		        			})
+		        		} else{
+		        			
+		        		}
 		        	},'json'
 		        );
 		})

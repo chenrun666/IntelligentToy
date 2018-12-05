@@ -19,9 +19,9 @@
 				<span class="mui-icon mui-icon-home"></span>
 				<span class="mui-tab-label">首页</span>
 			</a>
-			<a class="mui-tab-item">
-				<span class="mui-icon mui-icon-phone"></span>
-				<span class="mui-tab-label">电话</span>
+			<a class="mui-tab-item" id="message">
+				<span class="mui-icon mui-icon-chat"></span>
+				<span class="mui-tab-label">消息</span>
 			</a>
 			<a class="mui-tab-item">
 				<span class="mui-icon mui-icon-email"></span>
@@ -52,17 +52,14 @@
 		}
 
 		document.addEventListener("sendMusic", function(data) {
-			console.log(data.detail);
+			console.log(JSON.stringify(data.detail));
 			var send_msg = data.detail;
-
-			send_msg.to_user = "1234_toy";
-			console.log(send_msg)
 			ws.send(JSON.stringify(send_msg))
 		})
 
 		document.getElementById('mine').addEventListener('tap', function() {
 			var ret = window.localStorage.getItem("user_id")
-			console.log(ret)
+		
 			if(ret != null) {
 				var userinfo = null;
 				mui.post(window.serv + "auto_login", {
@@ -82,6 +79,13 @@
 				})
 			}
 
+		})
+		
+		document.getElementById('message').addEventListener('tap',function () {
+		        mui.openWindow({
+		        		url: "message.html",
+		        		id: "message.html",
+		        })
 		})
 	</script>
 

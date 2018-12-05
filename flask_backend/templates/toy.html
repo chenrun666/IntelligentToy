@@ -6,14 +6,42 @@
 </head>
 <body>
 <audio src="" autoplay controls id="player"></audio>
-</body>
-<script>
-    var ws = new WebSocket("ws://192.168.19.14:9572/toy/1234_toy");
 
-    ws.onmessage = function (data) {
-        console.log(data.data);
-        document.getElementById("player").src = "http://192.168.19.14:5000/get_audio/" + data.data
+<p><input type="text" id="device_key" value="">
+    <button onclick="open_click()">玩具开机</button>
+</p>
+
+
+</body>
+<script src="/static/jquery-3.3.1.min.js"></script>
+<script>
+    {#var ws = new WebSocket("ws://192.168.19.14:9572/toy/1234_toy");#}
+    var ws = null;
+    {#var serv = "http://192.168.43.26:5000";#}
+    var serv = "http://192.168.19.24:5000";
+
+    var toy_id;
+
+    function open_click() {
+        var device_key = document.getElementById("device_key").value;
+        $.post(
+            serv + "/toy_login",
+            {"device_key": device_key},
+            function (data) {
+                document.getElementById("player").src = serv + "/get_audio/" + data.static;
+                toy_id = data.toy_id;
+                console.log(toy_id);
+                ws = new WebSocket("ws://192.168.19.24:9572/toy/" + toy_id);
+                ws.onmessage = function(data){
+                    console.log(data);
+                    document.getElementById("player").src = serv + "/get_audio/" + data.data;
+                }
+            }
+        )
+
+
     }
+
 
 </script>
 </html>

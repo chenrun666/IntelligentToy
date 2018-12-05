@@ -28,12 +28,23 @@
 	},
 	"toymanagy.html": {
 		"refer": [
-			"scan.html"
+			"scan.html",
+			"toy_info.html"
 		]
 	},
 	"scan.html": {
 		"refer": [
 			"bindtoy.html"
+		]
+	},
+	"bindtoy.html": {
+		"refer": [
+			"toymanagy.html"
+		]
+	},
+	"toy_info.html": {
+		"refer": [
+			"scan.html"
 		]
 	}
 }

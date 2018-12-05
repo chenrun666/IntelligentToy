@@ -20,8 +20,9 @@ def app(app_id):
     while True:
         app_msg = app_socket.receive()
         app_dict = json.loads(app_msg)
-        tou_user = app_dict.get("to_user")
-        toy_socket = socket_dict.get(tou_user)
+        print(app_dict)
+        to_user = app_dict.get("to_user")
+        toy_socket = socket_dict.get(to_user)
 
         toy_socket.send(app_dict.get("music"))
 

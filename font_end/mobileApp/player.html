@@ -24,10 +24,28 @@
 		<button type="button" class="mui-btn mui-btn-red mui-btn-block" id="stop">停止</button>
 		<button type="button" class="mui-btn mui-btn-blue mui-btn-block" id="resume">继续</button>
 		<button type="button" class="mui-btn mui-btn-green mui-btn-block" id="sendMusic">发送给玩具</button>
-
+		
+		<style type="text/css">
+		#popover{
+			height: 100px;
+			width:200px;
+		}
+		</style>
+		<div id="popover" class="mui-popover">
+			<div class="mui-scroll-wrapper">
+			    <div class="mui-scroll">
+				    <ul class="mui-table-view" id="manage_list">
+				    </ul>
+				</div>
+			</div>
+		</div>
+		<a href="#popover" id="openPopover" class="mui-btn mui-btn-primary mui-btn-block">打开弹出菜单</a>
+		
 		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+			
 			mui.init()
+			mui('.mui-scroll-wrapper').scroll()
 			var Sdata = null;
 			var player = null;
 			mui.plusReady(function() {
@@ -37,7 +55,30 @@
 				document.getElementById("title_text").innerText = Sdata.title + "正在播放"
 				document.getElementById("cover").src = window.serv_image + Sdata.cover
 				
+				mui.post(window.serv + "my_toy",{
+						"user_id":window.localStorage.getItem("user_id")
+					},function(data){
+						console.log(JSON.stringify(data.data))
+						for (var i = 0; i < data.data.length; i++) {
+							createtag(data.data[i])	
+						}
+					},'json'
+				);
+				
 			})
+			function createtag(baby) {
+				var litag = document.createElement("li")
+				litag.className = "mui-table-view-cell"
+				var atag = document.createElement("a")
+				atag.innerText = baby.name
+				atag.onclick = function() {
+					var index = plus.webview.getWebviewById("HBuilder")
+					mui.fire(index, "sendMusic", {"music": Sdata.audio, "to_user": baby._id})
+				}
+				litag.appendChild(atag)
+				document.getElementById("manage_list").appendChild(litag)
+				
+			}
 			
 			document.getElementById("pause").addEventListener("tap", function() {
 				player.pause()

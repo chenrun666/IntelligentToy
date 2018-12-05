@@ -39,16 +39,15 @@
     						id:"bindtoy.html",
     						extras: {"device_key": data.data.device}
     					})
-    					return
-    				} else if (code == 1) {
+    				} else if (data.code == 1) {
     					// 玩具已经被绑定
     					mui.toast(data.msg)
     					mui.back()
-    					return 
+    					return
     				} else{
     					mui.toast(data.msg)
     					mui.back()
-    					return 
+    					return
     				}
     				console.log(JSON.stringify(data.msg))
     			},'json'
